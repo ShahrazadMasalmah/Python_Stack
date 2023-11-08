@@ -39,7 +39,7 @@ print(changeValue(sports_directory))
 #4. Change the value 20 in z to 30
 def changeValue_in_z(z):
     for key in z[0].keys():
-        print(key)
+        #print(key)
         if z[0][key] == 20:
             z[0][key] = 30
     return z
@@ -58,7 +58,7 @@ students = [
 def iterateDictionary(students):
     for i in range(0, len(students)):
         for key, value in students[i].items():
-            print(key +' - '+ value + '\l')
+            print(key,'-',value)
 
 iterateDictionary(students) 
 
