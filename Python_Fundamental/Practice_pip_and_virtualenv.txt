@@ -1,0 +1,21 @@
+1.call py3Env\Scripts\activate 
+----By using this command I activated py3Env Virtual Environment.----
+2.pip list
+----This command checks a list of installed packages.---- 
+3.deactivate
+----This command disactive the py3Env environment.----
+4.pip3 list
+----This command lists installed packages, including editables.----
+5.call py3Env\Scripts\activate
+----This command re-activates the environment.----
+6.pip install Django==2.2.4
+----This command means install the Django packages.----
+7.pip freeze
+----This command shows packages I installed via pip.----
+8.pip freeze > requirements.txt
+----This command creates a text file and puts the packages that have been installed by (pip install Django==2.2.4).----
+9.pip uninstall Django
+----This command means uninstall django packages.----
+10.pip show Django
+----This commands means show information about one or more installed packages, but there is no information because
+Django packages uninstalled.----
