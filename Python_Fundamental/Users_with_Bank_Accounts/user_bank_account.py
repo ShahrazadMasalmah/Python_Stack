@@ -55,7 +55,7 @@ class BankAccount:
 		
 	def yield_interest(self):
 		if self.balance > 0:
-			self.balance = self.balance * self.int_rate
+			self.balance = self.balance + (self.balance * self.int_rate)
 		return self
 	
 user = User('Shahrazad_Masalmah', 'shahrazad@gmail.com')
