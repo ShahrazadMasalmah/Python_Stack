@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play ground 2</title>
+    
+    <style>
+        .container {
+            /*margin: 0 auto;*/
+            padding-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .div-block {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            display: inline-block;
+            margin-top: 10px;
+            background-color: var(--color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <div class="num">
+        {% for i in range(num): %}:
+            <div class="div-block" style='--color: {{color}};'></div>
+        {% endfor %}    
+    </div>
+    </div>
+</body>
+</html>
