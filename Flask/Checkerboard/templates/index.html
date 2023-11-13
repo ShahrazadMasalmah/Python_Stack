@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckerBoard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <table>
+        {% for i in range(num) %}
+        <tr>
+            {% for j in range(number) %}
+                <td class="color-1"></td>
+                <td class="color-2"></td>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for j in range(number) %}
+                <td class="color-2"></td>
+                <td class="color-1"></td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    </div>
+    
+</body>
+</html>
