@@ -1,0 +1,29 @@
+.section {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+#title {
+    text-decoration: underline;
+}
+.info {
+    margin-left: 30px;
+}
+.info span {
+    margin-left: 30px;
+}
+.go-back {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+#go {
+    width: 70px;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 25px;
+    background-color: #76a5af;
+    color: #ffffff;
+    box-shadow: 3px 3px 1px black;
+    border: 2px solid black;
+}
