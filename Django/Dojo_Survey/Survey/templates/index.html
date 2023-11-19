@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>Dojo Survey Index</title>
+    </head>
+    <body>
+        <form action="/result" method="post">
+            {% csrf_token %}
+            <fieldset class="Your-form">
+                <div class="name">
+                    <label><strong>Your Name:</strong></label>
+                    <input type="text" name="userName">
+                </div>
+                <div class="location">
+                    <label><strong>Dojo Location:</strong></label>
+                    <select name="dojoLocations" id="choose">
+                        <option value="Palestine">Palestine</option>
+                        <option value="Gremany">Gremany</option>
+                        <option value="Jordan">Jordan</option>
+                    </select>
+                </div>
+                <div class="language">
+                    <label><strong>Favorite Language:</strong></label>
+                    <select name="FavoritetLanguage" id="favorite">
+                        <option value="Arabic">Arabic</option>
+                        <option value="English">English</option>
+                        <option value="spanish">spanish</option>
+                    </select>
+                </div>
+                <div class="gender">
+                    <label ><strong>Gender:</strong></label>
+                    <input type="radio" id="Gender1" name="Gender" value="Female">
+                    <label for="Gender1">Female</label>
+                    <input type="radio" id="Gender2" name="Gender" value="Male">
+                    <label for="Gender2">Male</label>
+                    <input type="radio" id="Gender3" name="Gender" value="Other">
+                    <label for="Gender3">Other</label>
+                </div>
+                <div class="transport">
+                    <label><strong>Transport:</strong></label>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="I have a bike.">
+                    <label for="vehicle1"> I have a bike</label>
+                    <input type="checkbox" id="vehicle2" name="vehicle1" value="I have a car.">
+                    <label for="vehicle2"> I have a car</label>
+                    <input type="checkbox" id="vehicle3" name="vehicle1" value="I have a boat.">
+                    <label for="vehicle3"> I have a boat</label>
+                </div>
+                <div class="comment">
+                    <label><strong>Comment (optional):</strong></label>
+                    <textarea name="comment" id="area" cols="30" rows="5"></textarea>
+                </div>
+                <div class="submit-button">
+                    <button id="submit">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>

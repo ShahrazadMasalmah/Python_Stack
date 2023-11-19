@@ -1,0 +1,94 @@
+.Your-form {
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 30px 25px 30px 30px;
+}
+
+.name, .location, .language, .gender, .transport {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.name, .location, .language {
+    margin-top: 10px;
+}
+
+.gender {
+    margin-top: 30px;
+}
+
+.transport {
+    margin-top: 10px;
+}
+
+#choose, #favorite {
+    width: 180px;
+    height: 25px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.comment label {
+    margin-bottom: 10px;
+}
+
+#area {
+    width: 470px;
+    height: 100px;
+    font-size: 20px;
+    color: cadetblue;
+}
+
+.submit-button {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#submit {
+    width: 70px;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 25px;
+    background-color: #76a5af;
+    color: #ffffff;
+    box-shadow: 3px 3px 1px black;
+    border: 2px solid black;
+}
+
+.section {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+#title {
+    text-decoration: underline;
+}
+.info {
+    margin-left: 30px;
+}
+.info span {
+    margin-left: 30px;
+}
+.go-back {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+#go {
+    width: 70px;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 25px;
+    background-color: #76a5af;
+    color: #ffffff;
+    box-shadow: 3px 3px 1px black;
+    border: 2px solid black;
+}
