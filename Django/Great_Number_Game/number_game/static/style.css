@@ -1,0 +1,69 @@
+.container {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.result {
+    width: 200px;
+    height: 230px;
+    border: 2px solid black;
+    background-color: var(--color);
+    margin-left: 150px;
+    
+}
+
+.result h1{
+    text-align: center;
+    color: #ffffff;
+    margin-top: 65px;
+}
+
+.input-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#send {
+    width: 80px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #f74a16;
+    border: 0;
+    box-shadow: 3px 3px 1px #000000;
+}
+
+#text {
+    text-align: center;
+}
+
+#go {
+    width: 100px;
+    height: 30px;
+    background-color: #abcac3;
+    box-shadow: 3px 3px 1px #000000; 
+}
+
+#try {
+    width: 80px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #f7d916;
+    border: 0;
+    box-shadow: 3px 3px 1px #000000;
+}
+
+.show {
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+    color: #ffffff;
+    background-color: rgb(4, 148, 100);
+    text-align: center;
+    border: 2px solid #000000;
+    margin-top: 50px;
+}

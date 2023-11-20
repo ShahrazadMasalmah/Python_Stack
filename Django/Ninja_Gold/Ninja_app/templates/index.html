@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Ninja Money</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+      <div class="ninja-gold">
+        <div class="gold">
+            <h3>Your Gold: </h3>
+            <input id="gold_total" type="text" name="gold_total" value="{{gold_count}}">
+        </div>
+        <div class="section">
+            <form class="building" action="/process_money" method="post">
+            {% csrf_token %}
+            <h2>Farm</h2>
+            <input type="hidden" name="building" value="farm" />
+            <input class="submit" type="submit" name="find" value="Find Gold!"/>
+          </form>  
+          <form class="building" action="/process_money" method="post">
+            {% csrf_token %}
+            <h2>Cave</h2>
+            <input type="hidden" name="building" value="cave" />
+            <input class="submit" type="submit" name="find" value="Find Gold!"/>
+          </form> 
+          <form class="building" action="/process_money" method="post">
+            {% csrf_token %}
+            <h2>House</h2>
+            <input type="hidden" name="building" value="house" />
+            <input class="submit" type="submit" name="find" value="Find Gold!"/>
+          </form> 
+          <form class="building" action="/process_money" method="post">
+            {% csrf_token %}
+            <h2>Casino</h2>
+            <input type="hidden" name="building" value="casino" />
+            <input class="submit" type="submit" name="find" value="Find Gold!"/>
+          </form>  
+        </div>
+        <div class="activity">
+            <h3>Activities:</h3>
+            <div class="scroll" name="activity" contenteditable>
+              {% for act in activity_comment %}
+                {{ act|safe }}
+              {% endfor %}
+            </div>
+        </div>
+        <form action="/destroy" method="post">
+            {% csrf_token %}
+            <button class="reset" type="submit" name="button" value="reset">Reset</button>
+        </form>  
+      </div>
+  </body>
+</html>

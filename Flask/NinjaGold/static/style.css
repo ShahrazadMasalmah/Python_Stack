@@ -1,0 +1,61 @@
+.ninja-gold {
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+.gold {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+#gold_total {
+  width: 70px;
+  height: 20px;
+} 
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+.building {
+    width: 150px;
+    height: 130px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: aquamarine;
+  }
+.submit {
+    width: 100px;
+    height: 30px;
+    background-color: #ffeb3b;
+    border: 1px solid #e9e7d6;
+    box-shadow: 3px 3px 2px #000000;
+}
+.activity {
+    display: flex;
+    flex-direction: column;
+}
+.greentext {
+    color: green;
+}
+.redtext {
+  color: red;
+}
+.scroll {
+  height: 120px;
+  overflow-y: scroll;
+  padding-left: 10px;
+  /* the auto value is similar to scroll, but it adds scrollbars only when necessary */
+}
+.reset {
+    width: 100px;
+    height: 30px;
+    background-color: #ec1a1a;
+    border: 1px solid #e9e7d6;
+    box-shadow: 3px 3px 2px #000000; 
+    margin-top: 20px;
+}

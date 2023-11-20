@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Great Number Game</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to the Great Number Game!</h1>
+            <p>I am thinking of a number between 1 and 100</p>
+            <p>{{ request.session.count }} times take a guess!</p>
+            <div class="result" style="--color: {{color}};">
+                <h1>{{string}}</h1>
+                <form action="/result" method="post">
+                    {% csrf_token %}
+                    {{reset_button|safe}}
+                </form>
+            </div>
+            <form class="input-form" action="/guess" method="post">
+                {% csrf_token %}
+                <input id="text" type="text" name="number">
+                <input id="send" type="submit" name="send" value="Submit">   
+            </form>
+            <form action="/try">
+                {% csrf_token %}
+                <input id="try" type="submit" name="try" value="Try again">
+            </form>
+        </div>
+    </body>
+</html>
