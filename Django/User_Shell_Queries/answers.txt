@@ -1,0 +1,55 @@
+*Create a model called User following the ERD above
+-------------------------------------------------------
+from django.db import models
+class User(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email_address = models.CharField(max_length=255)
+    age = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+----------------------------------------------------------
+*Create and run the migration files to create the User table in your database
+-------------------------------------------------------------------------------
+python manage.py makemigrations
+python manage.py migrate
+-------------------------------------------------------------------------------
+*Create 3 new users
+--------------------------------------------------------------------------------
+from user_app.models import *	
+User.objects.create(first_name="mutaz",last_name="jaber",email_address="mutazmhj@gmail.com",age=30)
+User.objects.create(first_name="mohammad",last_name="habib",email_address="habib@gmail.com",age=20)
+User.objects.create(first_name="shahrazad",last_name="Masalmah",email_address="Shahrazad@gmail.com",age=20)
+---------------------------------------------------------------------------------------------------------------
+*Retrieve all the users
+-------------------------------------------------
+ User.objects.all()
+-------------------------------------------------
+*Retrieve the last user
+------------------------------------------------
+User.objects.last()
+------------------------------------------------
+*Retrieve the first user
+-------------------------------------------------
+User.objects.first()
+--------------------------------------------------
+*Change the user with id=3 so their last name is Pancakes.
+-------------------------------------------------------------
+change_last_name = User.objects.get(id=3)
+change_last_name.last_name="Panckakes"
+change_last_name.save()
+User.objects.get(id=3).__dict__
+-------------------------------------------------------------
+*Delete the user with id=2 from the database
+------------------------------------------------------------
+delete_User=User.objects.get(id=2)
+delete_User.delete()
+User.objects.all()
+-------------------------------------------------------------
+*Get all the users, sorted by their first name
+-------------------------------------------------------------
+User.objects.all().order_by("first_name")
+------------------------------------------------------------
+*Get all the users, sorted by their first name in descending order
+--------------------------------------------------------------------
+User.objects.all().order_by("-first_name")
