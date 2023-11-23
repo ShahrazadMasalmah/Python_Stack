@@ -1,0 +1,91 @@
+--------------------------------------------------------------------------------------------------
+*Create the Dojo class model
+--------------------------------------------------------------------------------------------------
+class Dojo(models.Model):
+   name = models.CharField(max_length=255)
+   city = models.CharField(max_length=255)
+   state = models.CharField(max_length=255)
+   desc = models.TextField(default="old dojo")
+   created_at = models.DateTimeField(auto_now_add=True)
+   updated_at = models.DateTimeField(auto_now=True)
+-------------------------------------------------------------------------------------------------
+*Create the Ninja class model
+-------------------------------------------------------------------------------------------------
+class Ninja(models.Model):
+   first_name = models.CharField(max_length=255)
+   last_name = models.CharField(max_length=255)
+   dojo = models.ForeignKey(Dojo, related_name="ninjas", on_delete = models.CASCADE)
+   created_at = models.DateTimeField(auto_now_add=True)
+   updated_at = models.DateTimeField(auto_now=True)   
+-------------------------------------------------------------------------------------------------
+*Create and run the migration files to create the tables in your database
+-------------------------------------------------------------------------------------------------
+python manage.py makemigrations
+python manage.py migrate
+-------------------------------------------------------------------------------------------------
+*Run the shell and import your models
+-------------------------------------------------------------------------------------------------
+python manage.py shell
+from dojo_ninjas_app.models import Dojo, Ninja
+-------------------------------------------------------------------------------------------------
+*Create 3 new dojos
+--------------------------------------------------------------------------------------------------
+Dojo.objects.create(name="dojoOne", city="Ramallah", state="Palestine")
+Dojo.objects.create(name="dojoTwo", city="Aman", state="Jordan")
+Dojo.objects.create(name="dojoThree", city="Cairo", state="Egypt")
+---------------------------------------------------------------------------------------------------
+*Delete the 3 dojos you just created
+---------------------------------------------------------------------------------------------------
+dojo1= ClassName.objects.get(id=1)
+dojo1.delete()
+dojo2= ClassName.objects.get(id=1)
+dojo2.delete()
+dojo3= ClassName.objects.get(id=1)
+dojo3.delete()
+Dojo.objects.all()
+--------------------------------------------------------------------------------------------------
+*Create 3 more dojos
+---------------------------------------------------------------------------------------------------
+Dojo.objects.create(name="dojoOne", city="Ramallah", state="Palestine")
+Dojo.objects.create(name="dojoTwo", city="Aman", state="Jordan")
+Dojo.objects.create(name="dojoThree", city="Cairo", state="Egypt")
+--------------------------------------------------------------------------------------------------
+*Create 3 ninjas that belong to the first dojo
+--------------------------------------------------------------------------------------------------
+Ninja.objects.create(first_name="Raed", last_name="Tubileh", dojo=Dojo.objects.get(id=4))
+Ninja.objects.create(first_name="Mohammad", last_name="Yahya", dojo=Dojo.objects.get(id=4))
+Ninja.objects.create(first_name="Shahrazad", last_name="Masalmah", dojo=Dojo.objects.get(id=4))
+--------------------------------------------------------------------------------------------------
+*Create 3 ninjas that belong to the second dojo
+--------------------------------------------------------------------------------------------------
+Ninja.objects.create(first_name="Ahmad", last_name="Wael", dojo=Dojo.objects.get(id=5))
+Ninja.objects.create(first_name="Noor", last_name="Taleeb", dojo=Dojo.objects.get(id=5))
+Ninja.objects.create(first_name="Aya", last_name="Norus", dojo=Dojo.objects.get(id=5))
+--------------------------------------------------------------------------------------------------
+*Create 3 ninjas that belong to the third dojo
+--------------------------------------------------------------------------------------------------
+Ninja.objects.create(first_name="Ali", last_name="Ghzawi", dojo=Dojo.objects.get(id=6))
+Ninja.objects.create(first_name="Moataz", last_name="Ramon", dojo=Dojo.objects.get(id=6))
+Ninja.objects.create(first_name="Sarah", last_name="Mkdad", dojo=Dojo.objects.get(id=6))
+---------------------------------------------------------------------------------------------------
+*Retrieve all the ninjas from the first dojo
+----------------------------------------------------------------------------------------------------
+dojo1 = Dojo.objects.first()
+dojo1.ninjas.all()
+----------------------------------------------------------------------------------------------------
+*Retrieve all the ninjas from the last dojo
+----------------------------------------------------------------------------------------------------
+dojo2 = Dojo.objects.last()
+dojo2.ninjas.all()
+----------------------------------------------------------------------------------------------------
+*Retrieve the last ninja's dojo
+----------------------------------------------------------------------------------------------------
+ninja = Ninja.objects.last()
+ninja.dojo.name
+---------------------------------------------------------------------------------------------------
+*Create a new dojo
+--------------------------------------------------------------------------------------------------
+python manage.py migrate
+python manage.py makemigrations
+from dojo_ninjas_app.models import Dojo, Ninja
+Dojo.objects.create(name="dojoFour",city="Burit",state="Lebanon", desc="new dojo")
