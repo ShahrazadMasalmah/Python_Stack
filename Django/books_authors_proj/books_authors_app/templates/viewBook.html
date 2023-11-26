@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <title>Books & Authors</title>
+    </head>
+    <body>
+        <div class="mx-auto mt-3 px-3 py-3 border border-black shadow-lg" style="width: 700px; height: 600px; background: url('https://th.bing.com/th/id/R.a4125ce9a5bc0a0153c044ca47f4eb0a?rik=RobBUAEL37QIFw&pid=ImgRaw&r=0');">
+            <div>
+                <h2 class="text-center">{{ book.title }}</h2>
+                <p><strong>ID:</strong> {{ book.id }}</p>
+                <p><strong>Description:</strong> {{ book.desc }}</p>
+            </div>
+            <div>
+                <p><strong>Authors:</strong></p>
+                <ul>
+                    {% for authorBook in book.authors.all %}
+                        <li>{{ authorBook.first_name }} {{ authorBook.last_name }}</li>
+                    {% endfor %}     
+                </ul>
+                <form action="/add-author-book" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="book" value="{{ book.id }}">
+                    <select name="author">
+                        {% for author in non_assoc_authors %}
+                            <option value="{{ author.id }}">{{ author.first_name }} {{ author.last_name }}</option>
+                        {% endfor %}     
+                    </select>
+                    <input class="btn btn-success shadow" type="submit" name="submit" value="Add">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
