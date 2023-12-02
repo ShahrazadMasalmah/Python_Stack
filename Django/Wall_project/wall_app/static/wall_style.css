@@ -1,0 +1,67 @@
+.wallPage {
+    width: 800px;
+    margin: 0 auto;
+}
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+.right-nav {
+    display: flex;
+}
+.right-nav p {
+    margin-right: 10px;
+}
+.message, .comment {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.message label, .comment label {
+    margin-bottom: -20px;
+    font-size: 23px;
+}
+.btn-message, .btn-comment {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-message input {
+    width: 120px;
+    height: 30px;
+    background-color: green;
+    color: white;
+    box-shadow: 3px 3px 1px rgb(65, 64, 64);
+}
+.comment {
+    width: 700px;
+    margin-left: 50px;
+}
+.btn-comment input {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(155, 189, 6);
+    color: white;
+    box-shadow: 3px 3px 1px rgb(65, 64, 64);
+}
+.show-message-comment {
+    margin-top: -20px;
+    margin-left: 10px;
+}
+.comments {
+    margin-left: 20px;
+}
+.comments p {
+    font-size: 15px;
+}
+#delete {
+    width: 120px;
+    height: 30px;
+    background-color: rgb(189, 73, 6);
+    color: white;
+    box-shadow: 3px 3px 1px rgb(65, 64, 64);
+    margin-left: 10px;
+}

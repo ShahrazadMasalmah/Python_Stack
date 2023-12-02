@@ -1,0 +1,73 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.h1-text {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.reg-email {
+    margin-left: 36px;
+}
+.birthday {
+    margin-left: 15px;
+    width: 190px;
+}
+.password {
+    margin-left: 7px;
+}
+.conf_PW {
+    margin-left: 12px;
+}
+.register {
+    width: 100px;
+    height: 30px;
+    background-color: darkcyan;
+    color: white;
+    box-shadow: 4px 4px 1px lightsteelblue;
+}
+.login {
+    margin-top: -150px;
+}
+.log-text {
+    margin-bottom: 15px;
+    margin-top: -25px;
+}
+.email {
+    margin-left: 28px;
+}
+.btn-login {
+    width: 100px;
+    height: 30px;
+    background-color: brown;
+    color: white;
+    box-shadow: 4px 4px 1px burlywood;
+}
+.message {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.section {
+    width: 500px;
+    height: 200px;
+    border: 2px solid black;
+    text-align: center;
+    box-shadow: 4px 4px 1px rgb(219, 214, 214);
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#logout {
+    text-align: end;
+    margin-right: 15px;
+}
+
+#text {
+    color: green;
+    font-size: 20px;
+}
+
